@@ -57,7 +57,7 @@ if generate_btn:
                 files = {"file": (uploaded_file.name, uploaded_file.getvalue(), "application/pdf")}
                 data = {"topic": topic, "num_questions": num_questions}
                 
-                response = requests.post("https://ai-exam-generator-2-o0ib.onrender.com", files=files, data=data)
+                response = requests.post("https://ai-exam-generator-2-o0ib.onrender.com/generate-exam", files=files, data=data)
                 
                 if response.status_code == 200:
                     # LƯU KẾT QUẢ VÀO SESSION_STATE THAY VÌ IN RA LUÔN
