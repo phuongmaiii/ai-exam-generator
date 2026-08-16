@@ -21,7 +21,7 @@ export default function CreateJob() {
       };
       
       // 2. Gọi API 1 lần duy nhất (Nhớ check lại backend của bạn dùng '/api/jobs' hay '/jobs')
-      const res = await api.post('/api/jobs', jobData);
+      const res = await api.post('/jobs', jobData);
       
       // 3. Thông báo và điều hướng
       message.success('Đã đăng tin tuyển dụng thành công!');

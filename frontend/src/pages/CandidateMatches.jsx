@@ -1,11 +1,13 @@
-import { useParams } from 'react-router-dom';
-import { Card, Typography } from 'antd';
+import { useParams, useNavigate } from 'react-router-dom';
+import { Card, Typography, Button } from 'antd';
+import { ArrowLeftOutlined } from '@ant-design/icons';
 import MatchTable from '../components/MatchTable';
 
 const { Title } = Typography;
 
 export default function CandidateMatches() {
   const { candidateId } = useParams();
+  const navigate = useNavigate(); // ✔️ ĐÚNG: Đặt bên trong function component
 
   const columns = [
     { title: 'Vị trí', dataIndex: 'jobTitle' },
@@ -13,8 +15,15 @@ export default function CandidateMatches() {
   ];
 
   return (
-    <Card style={{ maxWidth: 900, margin: '40px auto' }}>
-      <Title level={3}>CV của bạn phù hợp với các vị trí sau</Title>
+    <Card 
+      title={`Đề xuất việc làm cho Ứng viên ID: ${candidateId}`} 
+      style={{ margin: '40px auto', maxWidth: 900 }}
+      extra={
+        <Button icon={<ArrowLeftOutlined />} onClick={() => navigate(-1)}>
+          Quay lại
+        </Button>
+      }
+    >
       <MatchTable apiPath={`/match/candidate/${candidateId}`} columnsConfig={columns} />
     </Card>
   );

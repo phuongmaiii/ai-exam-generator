@@ -4,17 +4,20 @@ import UploadCv from './pages/UploadCv'; // Tùy chỉnh đúng tên file của 
 import CandidateMatches from './pages/CandidateMatches';
 import CreateJob from './pages/CreateJob'; // Tùy chỉnh đúng tên file của bạn
 import HRMatches from './pages/HRMatches';
+import CandidateDetails from './pages/CandidateDetails';
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<RoleSelect />} />
+        
 
         {/* Luồng Ứng viên */}
         <Route path="/candidate" element={<UploadCv />} />
         <Route path="/candidate/matches/:candidateId" element={<CandidateMatches />} />
-
+        <Route path="/hr/candidate/:id" element={<CandidateDetails />} />
+        
         {/* Luồng HR */}
         <Route path="/hr" element={<CreateJob />} />
         <Route path="/hr/matches/:jobPostingId" element={<HRMatches />} />

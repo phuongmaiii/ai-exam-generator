@@ -28,7 +28,7 @@ export default function UploadCv() {
       });
       
       // Thông báo thành công và chuyển trang
-      message.success(`Đã lưu CV: ngành ${res.data.industry || 'N/A'}, vị trí ${res.data.position || 'N/A'}`);
+      message.success('Đã tìm thấy vị trí phù hợp theo CV của bạn!');
       navigate(`/candidate/matches/${res.data.id}`);
       
     } catch (err) {
