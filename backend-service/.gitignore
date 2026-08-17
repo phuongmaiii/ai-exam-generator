@@ -1,0 +1,16 @@
+# Backup & Archives
+*.zip
+cv-recruitment-service-BACKUP/
+exam-generator/
+
+# Java / Spring Boot
+target/
+*.class
+.mvn/
+*.log
+
+# React / Node
+node_modules/
+build/
+dist/
+.DS_Store
